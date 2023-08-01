@@ -51,7 +51,6 @@ class _RegisterViewState extends ConsumerState<RegisterView> {
                     ),
 
                     /// [Logo]
-                    Image.asset(R.pngs.REGISTER_LOGO)
                   ],
                 ),
               ),

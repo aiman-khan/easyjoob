@@ -28,7 +28,7 @@ class OnboardItemWidget extends StatelessWidget {
           /// [Image]
           SizedBox(
             height: 286.h,
-            child: SvgPicture.asset(
+            child: Image.asset(
               image,
               fit: BoxFit.contain,
             ),

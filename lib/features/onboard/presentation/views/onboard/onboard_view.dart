@@ -1,7 +1,9 @@
 import 'package:easyjoob/common/extensions/sized_box.dart';
 import 'package:easyjoob/features/onboard/presentation/views/onboard/widgets/onboard_item_widget.dart';
+import 'package:easyjoob/util/router/paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../common/widgets/app_filled_button.dart';
 import '../../../../../util/resource/r.dart';
@@ -70,7 +72,7 @@ class _OnboardViewState extends State<OnboardView> {
                       headingText: "Break Language\nBarriers",
                       bodyText:
                           "Communicate effortlessly in different\nlanguages and ensure a smooth journey.",
-                      image: R.svgs.ONBOARD_LANGUAGE_IMAGE,
+                      image: R.pngs.ONBOARD_IMAGE_1,
                     ),
 
                     /// [Second Page]
@@ -80,7 +82,7 @@ class _OnboardViewState extends State<OnboardView> {
                       headingText: "Quick Connect with\nQR Code",
                       bodyText:
                           "Save time and avoid typing errors, QR\ncode connection allows you to connect\nwith drivers or passengers instantly.",
-                      image: R.svgs.ONBOARD_QR_IMAGE,
+                      image: R.pngs.ONBOARD_IMAGE_2,
                     ),
 
                     /// [Third Page]
@@ -90,7 +92,7 @@ class _OnboardViewState extends State<OnboardView> {
                       headingText: "Listen to Your\nMessages",
                       bodyText:
                           "Translates messages into speech,\nallowing you to hear and understand\nmessages in your preferred language.",
-                      image: R.svgs.ONBOARD_MESSAGES_IMAGE,
+                      image: R.pngs.ONBOARD_IMAGE_3,
                     )
                   ],
                 ),
@@ -124,8 +126,7 @@ class _OnboardViewState extends State<OnboardView> {
               /// [Continue Button]
               AppFilledButton(
                 text: "Continue",
-                onTap: () =>
-                    Navigator.of(context).pushReplacementNamed('/register'),
+                onTap: () => GoRouter.of(context).push(RoutePaths.home),
               ),
               16.hb,
             ],

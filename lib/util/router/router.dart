@@ -1,3 +1,5 @@
+import 'package:easyjoob/features/onboard/presentation/views/onboard/onboard_view.dart';
+
 import '../../features/onboard/presentation/views/splash/splash_view.dart';
 import '../di/di.dart';
 import 'paths.dart';
@@ -13,6 +15,12 @@ final router = GoRouter(
       path: RoutePaths.splash,
       builder: (context, state) {
         return const SplashView();
+      },
+    ),
+    GoRoute(
+      path: RoutePaths.onBoarding,
+      builder: (context, state) {
+        return const OnboardView();
       },
     ),
   ],

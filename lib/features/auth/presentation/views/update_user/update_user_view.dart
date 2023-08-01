@@ -99,8 +99,8 @@ class _UpdateUserViewState extends ConsumerState<UpdateUserView> {
                                   ? CircleAvatar(
                                       backgroundColor: R.colors.white_FFF2F7FB,
                                       radius: 45.r,
-                                      child: SvgPicture.asset(
-                                          R.svgs.DEFAULT_USER_IMAGE),
+                                      // child: SvgPicture.asset(
+                                      //     R.svgs.DEFAULT_USER_IMAGE),
                                     )
                                   : image == null
                                       ? CircleAvatar(

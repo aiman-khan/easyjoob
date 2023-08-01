@@ -1,8 +1,10 @@
 import 'dart:async';
 
+import 'package:easyjoob/util/router/paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../util/di/di.dart';
 import '../../../../../util/resource/r.dart';
@@ -34,7 +36,7 @@ class _SplashViewState extends ConsumerState<SplashView> {
 
     if (mounted) {
       if (isFresh.isFreshInstall) {
-        Navigator.of(context).pushReplacementNamed('/onboard');
+        GoRouter.of(context).push(RoutePaths.onBoarding);
       } else {
         try {
           final getUserUsecase = sl<GetUserUsecase>();
@@ -43,9 +45,10 @@ class _SplashViewState extends ConsumerState<SplashView> {
 
           ref.read(userProvider.notifier).setUser(output.user);
 
-          if (mounted) Navigator.of(context).pushReplacementNamed('/home');
+          if (mounted) GoRouter.of(context).push(RoutePaths.home);
         } on NotLoginException {
-          Navigator.of(context).pushReplacementNamed('/register');
+          // Navigator.of(context).pushReplacementNamed('/register');
+          GoRouter.of(context).push(RoutePaths.onBoarding);
         }
       }
     }

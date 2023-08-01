@@ -5,10 +5,9 @@ part of r;
 class _Pngs {
   const _Pngs();
 
-  final ABOUT_IMAGE = 'assets/pngs/about_image.png';
-  final CAR = 'assets/pngs/car.png';
-  final LOCATION_MARKER_PURPLE = 'assets/pngs/location_marker_purple.png';
-  final LOCATION_MARKER_RED = 'assets/pngs/location_marker_red.png';
-  final REGISTER_LOGO = 'assets/pngs/register_logo.png';
   final SPLASH = 'assets/pngs/splash.png';
+  final ONBOARD_IMAGE_1 = 'assets/pngs/onboard_image_1.png';
+  final ONBOARD_IMAGE_2 = 'assets/pngs/onboard_image_2.png';
+  final ONBOARD_IMAGE_3 = 'assets/pngs/onboard_image_3.png';
+  final ONBOARD_IMAGE_4 = 'assets/pngs/onboard_image_4.png';
 }
