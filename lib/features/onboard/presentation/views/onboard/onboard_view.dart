@@ -30,7 +30,7 @@ class _OnboardViewState extends State<OnboardView> {
 
   Color getColor(int index) {
     if (index <= currentPageIndex) {
-      return R.colors.orange_FFF98D00;
+      return R.colors.blue_FF0373F3;
     } else {
       return R.colors.grey_FF7B7B7B;
     }
@@ -53,7 +53,7 @@ class _OnboardViewState extends State<OnboardView> {
           width: 1.sw,
           child: Column(
             children: [
-              120.hb,
+              12.hb,
               Expanded(
                 child: PageView(
                   controller: pageController,
@@ -66,33 +66,39 @@ class _OnboardViewState extends State<OnboardView> {
                   },
                   children: [
                     /// [First Page]
-                    /// [Break Languages Barrier]
                     OnboardItemWidget(
                       onTap: () => animate(1),
-                      headingText: "Break Language\nBarriers",
+                      headingText: "Browse and Search for Jobs",
                       bodyText:
-                          "Communicate effortlessly in different\nlanguages and ensure a smooth journey.",
+                          "Look through hundreds of job openings to find the one that's right for you.",
                       image: R.pngs.ONBOARD_IMAGE_1,
                     ),
 
                     /// [Second Page]
-                    /// [Quick Connect with QR Code]
                     OnboardItemWidget(
                       onTap: () => animate(2),
-                      headingText: "Quick Connect with\nQR Code",
+                      headingText: "Explore and Search for Companies",
                       bodyText:
-                          "Save time and avoid typing errors, QR\ncode connection allows you to connect\nwith drivers or passengers instantly.",
+                          "Explore thousands of companies and established businesses.",
                       image: R.pngs.ONBOARD_IMAGE_2,
                     ),
 
                     /// [Third Page]
-                    /// [Listen to Your Messages]
                     OnboardItemWidget(
                       onTap: () => animate(3),
-                      headingText: "Listen to Your\nMessages",
+                      headingText: "Stay tuned for New Opportunities",
                       bodyText:
-                          "Translates messages into speech,\nallowing you to hear and understand\nmessages in your preferred language.",
+                          "Create job alerts and stay up-to-date easily with the latest jobs and offers.",
                       image: R.pngs.ONBOARD_IMAGE_3,
+                    ),
+
+                    /// [Forth Page]
+                    OnboardItemWidget(
+                      onTap: () => animate(4),
+                      headingText: "Manage your Profile",
+                      bodyText:
+                          "Customize your profile and showcase your skills and talents to the world.",
+                      image: R.pngs.ONBOARD_IMAGE_4,
                     )
                   ],
                 ),
@@ -105,12 +111,12 @@ class _OnboardViewState extends State<OnboardView> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ...List.generate(
-                    3,
+                    4,
                     (index) => Padding(
                       padding: EdgeInsets.only(right: 8.w),
                       child: Container(
                         height: 8.h,
-                        width: 12.w,
+                        width: 8.w,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8.r),
                           color: getColor(index),
@@ -126,7 +132,7 @@ class _OnboardViewState extends State<OnboardView> {
               /// [Continue Button]
               AppFilledButton(
                 text: "Continue",
-                onTap: () => GoRouter.of(context).push(RoutePaths.home),
+                onTap: () => GoRouter.of(context).push(RoutePaths.login),
               ),
               16.hb,
             ],

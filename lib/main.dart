@@ -52,9 +52,10 @@ class _ProviderAppState extends State<ProviderApp> {
     return ProviderScope(
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
-        routerDelegate: router.routerDelegate,
-        routeInformationParser: router.routeInformationParser,
-        backButtonDispatcher: router.backButtonDispatcher,
+        routerConfig: router,
+        // routerDelegate: router.routerDelegate,
+        // routeInformationParser: router.routeInformationParser,
+        // backButtonDispatcher: router.backButtonDispatcher,
       ),
     );
   }

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../../util/di/di.dart';
 import '../../../../../util/resource/r.dart';
@@ -45,7 +46,7 @@ class _SplashViewState extends ConsumerState<SplashView> {
 
           ref.read(userProvider.notifier).setUser(output.user);
 
-          if (mounted) GoRouter.of(context).push(RoutePaths.home);
+          if (mounted) GoRouter.of(context).push(RoutePaths.onBoarding);
         } on NotLoginException {
           // Navigator.of(context).pushReplacementNamed('/register');
           GoRouter.of(context).push(RoutePaths.onBoarding);
@@ -66,10 +67,26 @@ class _SplashViewState extends ConsumerState<SplashView> {
       body: SizedBox(
         height: 1.sh,
         width: 1.sw,
-        child: Image.asset(
-          R.pngs.SPLASH,
-          fit: BoxFit.cover,
+        child: Center(
+          child: LogoTextWidget(),
         ),
+      ),
+    );
+  }
+}
+
+class LogoTextWidget extends StatelessWidget {
+  const LogoTextWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      "easyjoob",
+      style: GoogleFonts.poppins(
+        fontSize: 16.sp,
+        color: R.colors.blue_FF0373F3,
       ),
     );
   }

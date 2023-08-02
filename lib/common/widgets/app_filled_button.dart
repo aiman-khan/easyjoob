@@ -23,7 +23,7 @@ class AppFilledButton extends StatelessWidget {
       onPressed: onTap,
       style: ButtonStyle(
         backgroundColor:
-            MaterialStateProperty.all(color ?? R.colors.orange_FFFE4B10),
+            MaterialStateProperty.all(color ?? R.colors.blue_FF0373F3),
         minimumSize: MaterialStateProperty.all(Size(width ?? 327.w, 48.h)),
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(

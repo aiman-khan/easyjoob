@@ -1,3 +1,4 @@
+import 'package:easyjoob/features/auth/presentation/views/login/login_view.dart';
 import 'package:easyjoob/features/onboard/presentation/views/onboard/onboard_view.dart';
 
 import '../../features/onboard/presentation/views/splash/splash_view.dart';
@@ -19,8 +20,19 @@ final router = GoRouter(
     ),
     GoRoute(
       path: RoutePaths.onBoarding,
+      redirect: (state, context) async {
+        final routeName = await _middleWares.notFreshInstall(
+            finalRoute: RoutePaths.onBoarding);
+        return routeName;
+      },
       builder: (context, state) {
         return const OnboardView();
+      },
+    ),
+    GoRoute(
+      path: RoutePaths.login,
+      builder: (context, state) {
+        return const LoginView();
       },
     ),
   ],
